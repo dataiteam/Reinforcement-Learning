@@ -63,7 +63,7 @@ for j in range(5):
         total_reward += reward
     
         # visualize
-        list_visualize.append({"frame": env.render(mode = "ansi"),
+        list_visualize.append({"frame": env,
                                "state": state, "action": action, "reward":reward,
                                "Total Reward": total_reward})
         
@@ -76,7 +76,7 @@ for j in range(5):
 # %%
 import time       
 for i, frame in enumerate(list_visualize):
-    print(frame["frame"].getvalue())
+    print(frame["frame"].render())
     print("Timestep: ", i + 1)
     print("State: ", frame["state"])
     print("action: ", frame["action"])
